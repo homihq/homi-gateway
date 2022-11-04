@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM openjdk:17-jdk-slim-buster
 
 # Refer to Maven build -> finalName
 ARG JAR_FILE=target/homi-micro.jar
