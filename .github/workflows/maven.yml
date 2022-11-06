@@ -15,8 +15,8 @@ on:
     branches: [ "develop" ]
 
 jobs:
-  build:
 
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -40,8 +40,15 @@ jobs:
         name: homi-micro
         path: target/*.jar
     
-    
-    # - name: Build and push Docker images
-    #  uses: docker/build-push-action@v3.2.0
+
+  Publish:
+    needs: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3.1.1
+
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v3.2.0
  
       
