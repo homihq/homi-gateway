@@ -40,6 +40,6 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/micro-gateway:latest
+        tags: homihq/micro-gateway:v${{github.run_number}}
  
       
