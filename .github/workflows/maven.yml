@@ -42,7 +42,7 @@ jobs:
     
 
   Publish:
-    needs: Build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
