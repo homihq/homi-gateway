@@ -46,7 +46,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v3.1.1
+        uses: actions/download-artifact@v3.0.1
+        with:
+          name: homi-micro
+          path: target/*.jar
 
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.2.0
