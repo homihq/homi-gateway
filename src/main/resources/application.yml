@@ -6,3 +6,15 @@ management:
     web:
       exposure:
         include: gateway
+
+server:
+  port: 8080
+
+
+spring:
+  cloud:
+    gateway:
+      redis-route-definition-repository:
+        enabled: false
+  application:
+    name: homi-gateway
