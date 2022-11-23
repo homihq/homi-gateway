@@ -10,3 +10,4 @@ It uses Spring Cloud Gateway for routing.
 - [ ] API Key Auth
 - [ ] OUATH 2 / OIDC Auth
 - [ ] JWT Auth
+- [x] Max Message Size
