@@ -7,6 +7,7 @@ It uses Spring Cloud Gateway for routing.
 
 - [x] Resiliency
 - [ ] Rate limit 
+- [ ] Dynamic Routing
 - [ ] API Key Auth
 - [ ] OUATH 2 / OIDC Auth
 - [ ] JWT Auth
