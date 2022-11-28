@@ -59,12 +59,13 @@
             <version>1.313</version>
         </dependency>
 
-
         <dependency>
-            <groupId>com.hazelcast</groupId>
-            <artifactId>hazelcast-all</artifactId>
-            <version>4.2.6</version>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
         </dependency>
+
+
 
 
     </dependencies>

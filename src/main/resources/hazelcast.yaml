@@ -1,5 +1,0 @@
-hazelcast:
-  network:
-    join:
-      auto-detection:
-        enabled: true

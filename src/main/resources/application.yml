@@ -1,5 +1,5 @@
 management:
-  .endpoint:
+  endpoint:
     gateway:
       enabled: true
   endpoints:
@@ -26,7 +26,9 @@ spring:
   redis:
     url: ${REDIS_URL}
 
+
 homi:
+  gatewayId: ${GATEWAY_ID}
   config:
     route:
       github:
@@ -35,12 +37,6 @@ homi:
         repo: homihq/gateway-route-config
         branch: master
         file: routes.yml
-
-    type: github
-    token: ${GITHUB_TOKEN}
-    repo: homihq/gateway-route-config
-    branch: master
-    file: routes.yml
 
 
 

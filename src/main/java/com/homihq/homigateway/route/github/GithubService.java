@@ -1,4 +1,4 @@
-package com.homihq.homigateway.route;
+package com.homihq.homigateway.route.github;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,31 +8,27 @@ import org.kohsuke.github.GitHub;
 import org.kohsuke.github.GitHubBuilder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.gateway.route.RouteDefinition;
-import org.springframework.stereotype.Component;
 import org.yaml.snakeyaml.Yaml;
 
 import java.util.List;
 import java.util.Map;
 
 @Slf4j
-@Component
 @RequiredArgsConstructor
-public class GithubRunner implements CommandLineRunner {
-    private final RouteConfig routeConfig;
-    //33edb09ea3509d0325e4371233ab464ed44f1ba7
+public class GithubService {
+    private final GitHubProperties gitHubProperties;
 
-    @Override
-    public void run(String... args) throws Exception {
-        log.info("Route config - {}", routeConfig);
+    public void load() throws Exception {
+        log.info("Route config - {}", gitHubProperties);
         GitHub gitHub =
         GitHubBuilder.fromEnvironment()
-                .withOAuthToken(this.routeConfig.getToken()).build();
+                .withOAuthToken(this.gitHubProperties.getToken()).build();
         GHRepository ghRepository =
-        gitHub.getRepository(routeConfig.getRepo());
+        gitHub.getRepository(gitHubProperties.getRepo());
 
 
         GHContent ghContent =
-        ghRepository.getFileContent(routeConfig.getFile(),  routeConfig.getBranch());
+        ghRepository.getFileContent(gitHubProperties.getFile(),  gitHubProperties.getBranch());
         log.info("ghContent - {}", ghContent);
         log.info("Is file - {}", ghContent.isFile());
         log.info("sha - {}", ghContent.getSha());
