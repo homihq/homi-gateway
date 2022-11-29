@@ -19,24 +19,22 @@ spring:
     gateway:
       redis-route-definition-repository:
         enabled: false
-
-  autoconfigure:
-    exclude:  org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration, \
-              org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
   redis:
     url: ${REDIS_URL}
 
 
 homi:
   gatewayId: ${GATEWAY_ID}
-  config:
-    route:
-      github:
-        enabled: true
-        token: ${GITHUB_TOKEN}
-        repo: homihq/gateway-route-config
-        branch: master
-        file: routes.yml
+  embedded:
+    redis: true
+
+  route:
+    github:
+      enabled: true
+      token: ${GITHUB_TOKEN}
+      repo: homihq/gateway-route-config
+      branch: master
+      file: routes.yml
 
 
 

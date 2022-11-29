@@ -13,7 +13,7 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 
 @Configuration
 @ConditionalOnProperty(
-        value="homi.config.route.github.enabled",
+        value="homi.route.github.enabled",
         havingValue = "true")
 public class GitHubRouteDefinitionConfiguration {
 
