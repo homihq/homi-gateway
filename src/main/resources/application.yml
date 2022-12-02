@@ -28,7 +28,7 @@ spring:
 
 
 homi:
-  gatewayId: ${GATEWAY_ID}
+  gatewayId: ${GATEWAY_ID:'default'}
   route:
     github:
       enabled: true
