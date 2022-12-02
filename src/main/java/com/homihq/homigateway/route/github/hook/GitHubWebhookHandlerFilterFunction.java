@@ -18,6 +18,7 @@ import static org.springframework.http.HttpStatus.FORBIDDEN;
 import static org.springframework.util.Assert.*;
 
 @Slf4j
+@Deprecated
 public class GitHubWebhookHandlerFilterFunction implements HandlerFilterFunction<ServerResponse, ServerResponse> {
 
     private static final int SIGNATURE_LENGTH = 64;
@@ -25,7 +26,7 @@ public class GitHubWebhookHandlerFilterFunction implements HandlerFilterFunction
     @Value("${homi.gatewayId}")
     private String gatewayId;
 
-    @Value("${GITHUB_WEBHOOK_SECRET}")
+    @Value("${GITHUB_WEBHOOK_SECRET:'1234'}")
     private String webHookSecret;
 
     @Override

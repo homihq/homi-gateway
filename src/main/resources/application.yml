@@ -28,11 +28,11 @@ spring:
 
 
 homi:
-  gatewayId: ${GATEWAY_ID}
+  gatewayId: ${GATEWAY_ID:'default'}
   route:
     github:
       enabled: true
-      token: ${GITHUB_TOKEN}
+      token: ${GITHUB_TOKEN:'12346'}
       repo: homihq/gateway-route-config
       branch: master
       file: routes.yml
