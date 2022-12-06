@@ -6,7 +6,7 @@ import reactor.core.publisher.Mono;
 
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
-
+@Deprecated
 public class GitHubWebhookHandler {
 
     public Mono<ServerResponse> handle(ServerRequest request) {

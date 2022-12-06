@@ -15,6 +15,7 @@ import java.util.Map;
 
 @Slf4j
 @RequiredArgsConstructor
+@Deprecated
 public class GithubService {
     private final GitHubProperties gitHubProperties;
 
