@@ -3,7 +3,7 @@ package com.homihq.homigateway.route.github;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-
+@Deprecated
 @Data
 @ConfigurationProperties(GitHubProperties.PREFIX)
 public class GitHubProperties {

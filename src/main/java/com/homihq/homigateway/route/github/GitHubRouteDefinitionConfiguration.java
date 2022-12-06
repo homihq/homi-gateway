@@ -11,6 +11,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 
+@Deprecated
 @Configuration
 @ConditionalOnProperty(
         value="homi.route.github.enabled",

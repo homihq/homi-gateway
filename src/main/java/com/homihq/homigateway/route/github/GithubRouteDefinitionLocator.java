@@ -8,6 +8,7 @@ import static java.util.Collections.synchronizedMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Deprecated
 @Slf4j
 public class GithubRouteDefinitionLocator implements RouteDefinitionLocator {
 
