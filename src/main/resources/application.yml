@@ -1,7 +1,7 @@
 management:
   endpoint:
     gateway:
-      enabled: true
+      enabled: false
   endpoints:
     web:
       exposure:
@@ -16,6 +16,9 @@ spring:
     name: homi-gateway
 
 
-
-
+homi:
+  platform:
+    url: ${HOMI_PLATFORM_API_URL}
+  orgId: ${HOMI_ORG_ID}
+  apiKey: ${HOMI_API_KEY_ID}
 
