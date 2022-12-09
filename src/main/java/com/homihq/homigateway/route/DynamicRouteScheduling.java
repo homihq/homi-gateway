@@ -22,10 +22,10 @@ public class DynamicRouteScheduling {
     @Value("${homi.platform.url}")
     private String PLATFORM_URL;
 
-    @Value("{homi.orgId}")
+    @Value("{homi.platform.orgId}")
     private String ORG_ID;
 
-    @Value("{homi.apiKeyId}")
+    @Value("{homi.platform.apiKeyId}")
     private String APIKEY_ID;
 
 
