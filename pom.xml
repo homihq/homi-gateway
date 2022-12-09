@@ -64,7 +64,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>homi-gatweway</finalName>
+        <finalName>homi-gateway</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
