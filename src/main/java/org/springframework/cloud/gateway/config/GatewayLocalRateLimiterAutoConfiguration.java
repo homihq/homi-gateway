@@ -23,5 +23,6 @@ public class GatewayLocalRateLimiterAutoConfiguration {
     public RateLimiter localRateLimiter(ConfigurationService configurationService) {
         return new LocalRateLimiter(configurationService);
     }
+
 }
 
