@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import java.net.InetAddress;
 import java.util.Objects;
 
 
@@ -22,10 +24,10 @@ public class DynamicRouteScheduling {
     @Value("${homi.platform.url}")
     private String PLATFORM_URL;
 
-    @Value("{homi.platform.orgId}")
+    @Value("${homi.platform.orgId}")
     private String ORG_ID;
 
-    @Value("{homi.platform.apiKeyId}")
+    @Value("${homi.platform.apiKey}")
     private String APIKEY_ID;
 
 
@@ -33,14 +35,18 @@ public class DynamicRouteScheduling {
 
 
     @Scheduled(cron = "@hourly")
-    public void fetchRoutes() {
+    //@Scheduled(fixedDelay = 6000)
+    public void fetchRoutes() throws Exception{
+
+        String instanceId = InetAddress.getLocalHost().getHostName();
 
         log.info("Current Route Version : {}" , versionId);
         webClient.get()
                 .uri(PLATFORM_URL)
-                .header("X-API-KEY", APIKEY_ID)
+                .header("X-GW-KEY", APIKEY_ID)
                 .header("X-ORG_ID", ORG_ID)
                 .header("X-ROUTE-VERSION", versionId + "")
+                .header("X-INSTANCE-ID", instanceId)
                 .retrieve().bodyToMono(DynamicRouteDefinitions.class)
                 .subscribe(
                         routeDefs -> {
