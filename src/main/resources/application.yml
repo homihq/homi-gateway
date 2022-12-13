@@ -14,7 +14,16 @@ server:
 spring:
   application:
     name: homi-gateway
+  cloud:
+    gateway:
+      redis-route-definition-repository:
+        enabled: false
 
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration, \
+      org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+  redis:
+    url: ${REDIS_URL}
 
 homi:
   gateway:
@@ -23,4 +32,3 @@ homi:
     url: ${HOMI_PLATFORM_API_URL}
     orgId: ${HOMI_ORG_ID}
     apiKey: ${HOMI_GATEWAY_KEY}
-
