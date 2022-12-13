@@ -9,5 +9,5 @@ import java.util.List;
 public class DynamicRouteDefinitions {
 
     private Long version;
-    private List<RouteDefinition> routeDefinitions;
+    private List<ApiDefinition> apiDefinitions;
 }

@@ -34,8 +34,8 @@ public class DynamicRouteScheduling {
     private Long versionId = 0L;
 
 
-    @Scheduled(cron = "@hourly")
-    //@Scheduled(fixedDelay = 6000)
+    //Scheduled(cron = "@hourly")
+    @Scheduled(fixedDelay = 6000)
     public void fetchRoutes() throws Exception{
 
         String instanceId = InetAddress.getLocalHost().getHostName();
@@ -51,9 +51,14 @@ public class DynamicRouteScheduling {
                 .subscribe(
                         routeDefs -> {
                             this.versionId = routeDefs.getVersion();
-                            if(!Objects.isNull(routeDefs.getRouteDefinitions()) &&
-                                !routeDefs.getRouteDefinitions().isEmpty()) {
-                                this.dynamicRouteService.addAll(routeDefs.getRouteDefinitions());
+                            if(!Objects.isNull(routeDefs.getApiDefinitions()) &&
+                                !routeDefs.getApiDefinitions().isEmpty()) {
+                                log.info("Writing routes");
+                                for(ApiDefinition apiDefinition : routeDefs.getApiDefinitions()) {
+                                    log.info("Writing routes");
+                                    this.dynamicRouteService.addAll(apiDefinition.getRoutes());
+                                }
+
                             }
                         },
                         error -> {log.error("Error retrieving routes - {}", error);},
