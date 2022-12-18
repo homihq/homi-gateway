@@ -155,7 +155,7 @@ public class LocalRateLimiterTests extends BaseWebClientTests {
 	@EnableAutoConfiguration(exclude = {
 			org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration.class })
 	@SpringBootConfiguration
-	@Import(BaseWebClientTests.DefaultTestConfig.class)
+	@Import(DefaultTestConfig.class)
 	public static class TestConfig {
 
 	}
