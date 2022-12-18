@@ -38,7 +38,7 @@ jobs:
       run: |
         mvn com.github.ferstl:depgraph-maven-plugin:4.0.2:aggregate -DgraphFormat=json -Ddetail=true
         GRAPH=$(cat target/dependency-graph.json)
-        gh api --header 'Accept: application/vnd.github+json' --header 'X-GitHub-Api-Version:2022-11-28' --method POST /repos/homihq/homi-gateway/dependency-graph/snapshots -f body="$GRAPH"
+        gh api --header 'Accept: application/vnd.github+json' --header 'X-GitHub-Api-Version:2022-11-28' --method POST /repos/homihq/homi-gateway/dependency-graph/snapshots --input .target/dependency-graph.json
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:
