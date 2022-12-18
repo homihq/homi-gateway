@@ -45,7 +45,7 @@
             <dependency>
                 <groupId>com.homihq</groupId>
                 <artifactId>homi-gateway-core</artifactId>
-                <version>${parent.version}</version>
+                <version>${project.parent.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
