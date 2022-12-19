@@ -255,7 +255,7 @@ public class LocalRateLimiter extends AbstractRateLimiter<LocalRateLimiter.Confi
             return replenishRate;
         }
 
-        public LocalRateLimiter.Config setReplenishRate(int replenishRate) {
+        public Config setReplenishRate(int replenishRate) {
             this.replenishRate = replenishRate;
             return this;
         }
@@ -264,7 +264,7 @@ public class LocalRateLimiter extends AbstractRateLimiter<LocalRateLimiter.Confi
             return burstCapacity;
         }
 
-        public LocalRateLimiter.Config setBurstCapacity(int burstCapacity) {
+        public Config setBurstCapacity(int burstCapacity) {
             this.burstCapacity = burstCapacity;
             return this;
         }
@@ -273,7 +273,7 @@ public class LocalRateLimiter extends AbstractRateLimiter<LocalRateLimiter.Confi
             return requestedTokens;
         }
 
-        public LocalRateLimiter.Config setRequestedTokens(int requestedTokens) {
+        public Config setRequestedTokens(int requestedTokens) {
             this.requestedTokens = requestedTokens;
             return this;
         }
